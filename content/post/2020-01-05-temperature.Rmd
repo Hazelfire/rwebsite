@@ -1,0 +1,19 @@
+---
+title: "Data"
+author: "Sam Nolan"
+date: 2020-01-05T13:57:49+11:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+library(tidyverse)
+```
+
+Graph
+
+```{r, fig.cap='Temp'}
+temperature <- read_csv("annual_temp.csv")
+ggplot(filter(temperature, Source=="GISTEMP"), aes(x=Year, y=Mean)) + geom_line()
+```

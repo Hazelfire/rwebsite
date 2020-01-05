@@ -1,0 +1,25 @@
+---
+title: "Data"
+author: "Sam Nolan"
+date: 2020-01-05T13:57:49+11:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+
+
+<p>Graph</p>
+<pre class="r"><code>temperature &lt;- read_csv(&quot;annual_temp.csv&quot;)
+## Parsed with column specification:
+## cols(
+##   Source = col_character(),
+##   Year = col_double(),
+##   Mean = col_double()
+## )
+ggplot(filter(temperature, Source==&quot;GISTEMP&quot;), aes(x=Year, y=Mean)) + geom_line()</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="/post/2020-01-05-temperature_files/figure-html/unnamed-chunk-1-1.png" alt="Temp" width="672" />
+<p class="caption">
+Figure 1: Temp
+</p>
+</div>
